@@ -1,0 +1,15 @@
+This is not actually a UML diagram, but it is intended to be like a whiteboard
+for the technical design of Classes, Objects, Interfaces, etc.
+
+
+interface BGChannelModule
+{
+  ModuleView $view;
+
+}
+
+class BGChannelModuleView
+{
+  string $file;
+
+}

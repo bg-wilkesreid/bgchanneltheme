@@ -1,0 +1,17 @@
+This is a list of features that are being worked on or are being planned
+for the Bureau Gravity channel theme.
+
+- Posts
+  - All posts are assumed to be videos with descriptions and associated
+    metadata
+
+- User accounts
+  - List of videos ("save video" links on video pages if logged in)
+  - Standard user account management functionality
+    - Changing password
+  - Social Log In (Facebook, Twitter, etc)
+    - Also keep in mind the possibility of a "Gravity" account that can be
+      used to log in to any Bureau Gravity channel website
+
+- Modules
+  - Video

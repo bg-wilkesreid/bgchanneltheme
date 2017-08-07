@@ -1,0 +1,38 @@
+This is working documentation.
+
+-- Post Types --
+
+- channel-video (Videos)
+
+The creation of post types is handled in php/posttypes/create_posttypes.php
+
+Each post type has its own folder where the specifics of its creation is defined, as well as
+the creation of any meta boxes. There will be a folder for the 'page' and 'post' types,
+and those will be specifically for the creation of meta boxes for those post types.
+
+-- Modules --
+
+We are working with the concept that we can create modules for reuse around the site.
+These modules should be able to be used as shortcodes, widgets, and hopefully we will
+add the ability to add modules to pages using a page builder like other themes.
+
+Modules are defined in the php/modules folder. Each folder refers to just a group
+of modules, and each individual file (except main.php) is a single module.
+
+Modules are classes that implement the BGChannelModule interface defined in php/modules/main.php.
+
+Modules must register with the BGChannelModuleController in order to be usable and to
+have their shortcodes and widgets automatically generated. To do so,
+call BGChannelModuleController::register( new ModuleClass() ) where ModuleClass is the
+module's class.
+
+BGChannelModuleController is where the automatic creation of shortcodes for every module
+occurs. It will also automatically create widgets for use in sidebars as well as
+modules for use in the upcoming page builder.
+
+-- Styling/CSS --
+
+All styling right now is based on UIKit (getuikit.com). There is going to be customization
+of styling options, although not as much as some themes because we are comfortable
+making most customization through css. Hopefully we will eventually have a built in
+SASS editor in WordPress where we can make changes and it will compile to css upon saving.

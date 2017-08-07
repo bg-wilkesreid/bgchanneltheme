@@ -1,0 +1,12 @@
+{
+    "name": "bureaugravity/bgchanneltheme",
+    "description": "The official Bureau Gravity Channelization theme",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Bureau Gravity",
+            "email": "developer@bureaugravity.com"
+        }
+    ],
+    "require": {}
+}

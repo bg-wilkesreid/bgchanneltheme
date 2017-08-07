@@ -1,0 +1,73 @@
+/*
+Theme Name: Bureau Gravity Channel
+Theme URI: https://www.bureaugravity.com
+Author: Bureau Gravity
+Author URI: https://www.bureaugravity.com
+Description: The official Bureau Gravity Channelization theme
+Version: 0.0.1
+License: Custom
+License URI: https://www.bureaugravity.com/channel/license
+Text Domain: bgchanneltheme
+*/
+
+#main {
+
+}
+
+#header {
+
+}
+
+#footer {
+  background: #676767;
+  height: 80px;
+}
+
+.video-sizer {
+  max-width: 640px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hero-video {
+  height: 547px;
+  /*margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);*/
+}
+.hero-video-background {
+  z-index: -1;
+}
+.hero-video-play-button {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  font-size: 4em;
+  color: #fff;
+  border: 1px solid #fff;
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transition: background .2s, color .2s;
+}
+.hero-video-play-button:hover {
+  color: #fff;
+}
+.hero-video-play-button-icon {
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.hero-video-title {
+  color: #fff;
+  text-align: center;
+  margin-top: 90px;
+}
