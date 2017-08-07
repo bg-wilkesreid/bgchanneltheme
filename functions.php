@@ -38,10 +38,10 @@ function bgchanneltheme_enqueue() {
 
   wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );
 
-  wp_enqueue_script( 'uikit-js', get_template_directory_uri() . '/assets/js/uikit/uikit.min.js', ['jquery'] );
-  wp_enqueue_script( 'uikit-icons-js', get_template_directory_uri() . '/assets/js/uikit/uikit-icons.min.js', ['uikit-js'] );
+  wp_enqueue_script( 'uikit-js', get_template_directory_uri() . '/assets/js/lib/uikit/uikit.min.js', ['jquery'] );
+  wp_enqueue_script( 'uikit-icons-js', get_template_directory_uri() . '/assets/js/lib/uikit/uikit-icons.min.js', ['uikit-js'] );
 
-  wp_enqueue_style( 'uikit', get_template_directory_uri() . '/assets/css/uikit/uikit.min.css', ['font-awesome'] );
+  wp_enqueue_style( 'uikit', get_template_directory_uri() . '/assets/css/lib/uikit/uikit.min.css', ['font-awesome'] );
   wp_enqueue_style( 'style', get_stylesheet_uri(), ['uikit'], '0.0.1' );
 
   wp_enqueue_style( 'mobile-style', get_stylesheet_directory_uri() . '/assets/css/responsive/mobile.css', ['style'], '0.0.1', 'screen and (max-width: 767px)');

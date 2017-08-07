@@ -1,2 +1,6 @@
 .DS_Store
 vendor
+assets/font-awesome
+assets/css/lib
+assets/js/lib
+node_modules
