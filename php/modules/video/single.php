@@ -17,7 +17,7 @@ class BGChannel_SingleVideoModule implements BGChannelModule
     $id = $this->id;
 
     if ($id === null) {
-      echo 'no video specified';
+      //echo 'no video specified';
       return;
     }
 
@@ -28,9 +28,7 @@ class BGChannel_SingleVideoModule implements BGChannelModule
 
     $embed_url = self::get_embed_code($video_url);
 
-    echo '<span class="video-sizer"><span class="video-wrapper">';
-      echo '<iframe width="'.$width.'" height="'.$height.'" src="'.$embed_url.'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-    echo '</span></span>';
+    echo '<iframe width="960" height="540" src="'.$embed_url.'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen uk-responsive uk-video></iframe>';
   }
 
   public static function get_embed_code($video_url) {

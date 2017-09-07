@@ -24,9 +24,11 @@ Text Domain: bgchanneltheme
 }
 
 .video-sizer {
-  max-width: 640px;
-  display: inline-block;
+  width: 100%;
+  display: block;
   vertical-align: top;
+  height: 0;
+  padding-bottom: 56.25%;
 }
 
 .hero-video {
@@ -68,6 +70,5 @@ Text Domain: bgchanneltheme
 }
 .hero-video-title {
   color: #fff;
-  text-align: center;
   margin-top: 90px;
 }

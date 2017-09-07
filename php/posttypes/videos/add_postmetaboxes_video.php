@@ -1,5 +1,7 @@
 <?php
 
+use BGChannelTheme\API;
+
 function bgchanneltheme_add_postmetaboxes_video() {
   add_meta_box( 'bgchanneltheme-video-url', __('Video URL', 'bgchanneltheme'), 'bgchanneltheme_postmetaboxes_video_videourl', 'channel-video', 'normal', 'high' );
   add_meta_box( 'bgchanneltheme-video-featured', __('Featured', 'bgchanneltheme'), 'bgchanneltheme_postmetaboxes_video_featured', 'channel-video', 'normal', 'high' );
@@ -58,7 +60,7 @@ function bgchanneltheme_savemeta_video( $post_id, $post ) {
 
   // If the checkbox "featured" is checked, add it to list of featured videos.
   // If not, remove it from list of featured videos.
-  if ( wp_verify_nonce( $_POST['bgchanneltheme_video_featured_nonce'], basename( __FILE__ ) ) ) {
+  if ( isset($_POST['bgchanneltheme_video_featured_nonce']) && wp_verify_nonce( $_POST['bgchanneltheme_video_featured_nonce'], basename( __FILE__ ) ) ) {
 
     $featured_videos_str = get_option('bgchanneltheme_featured_videos');
     $max_featured_videos = get_option('bgchanneltheme_max_featured_videos');

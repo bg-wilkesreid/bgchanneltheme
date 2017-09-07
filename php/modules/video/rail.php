@@ -1,17 +1,15 @@
 <?php
 
-class BGChannel_HeroVideoModule implements BGChannelModule
+class BGChannel_VideoRailModule implements BGChannelModule
 {
-  public $id;
-  public $title;
-  public $subtitle;
-  public function __construct($id = null, $title = null, $subtitle = "", $featured = false) {
-    $this->id = $id;
-    $this->title = $title;
-    $this->subtitle = $subtitle;
+  public $ids;
+  public $category;
+  public function __construct($category = null, $ids = null, $featured = false) {
+    $this->ids = explode(",", $ids);
+    $this->category = $category;
 
     if ($featured && $id === null) {
-      $this->id = bgchanneltheme_get_featured_video((int) $featured - 1);
+      $this->ids = bgchanneltheme_get_featured_videos();
     }
   }
 
@@ -20,20 +18,16 @@ class BGChannel_HeroVideoModule implements BGChannelModule
    * @return string The desired shortcode.
    */
   public static function shortcode() {
-    return 'hero_video';
+    return 'video_rail';
   }
   public function display() {
-    $id = $this->id;
-    $title = $this->title;
-    $subtitle = $this->subtitle;
+    $ids = $this->ids;
+    $category = $this->category;
 
-    if ($id === null) {
+    if ($category === null && count($ids) == 0) {
       return;
     }
-
-    if ($title === null){
-      $title = get_the_title($id);
-    }
+    
     //$video = get_post($id);
     $thumbnail_url = get_the_post_thumbnail_url($id);
     $permalink = get_permalink($id);

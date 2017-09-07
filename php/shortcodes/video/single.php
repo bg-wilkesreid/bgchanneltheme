@@ -1,3 +1,0 @@
-<?php
-
-// Individual video shortcode

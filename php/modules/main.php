@@ -12,6 +12,8 @@ interface BGChannelModule
 */
 class BGChannelModuleController
 {
+  public static $twigLoader;
+  public static $twig;
   /*
    Loop through every entry in the global $bgchanneltheme_enabled_modules array
    (which is defined near the top of functions.php) and "register" each module.
@@ -79,6 +81,21 @@ class BGChannelModuleController
     });
   }
 
+  public static function prepareViews() {
+    global $bgchanneltheme_dir;
+
+    $rootdir = dirname(dirname(dirname(dirname(dirname(__FILE__)))));
+
+    self::$twigLoader = new Twig_Loader_Filesystem($bgchanneltheme_dir . "/php/views");
+    self::$twig = new Twig_Environment(self::$twigLoader, array(
+      'cache' => $rootdir . '/uploads/bgchanneltheme/viewcache',
+    ));
+  }
+
+  public static function view($name, $data) {
+    return self::$twig->load($name.".html")->render($data);
+  }
+
  /**
   * Takes the method, retrieves its arguments and argument defaults, and passes
   * them to the shortcode_atts function. This way, each individual module class is
@@ -95,7 +112,12 @@ class BGChannelModuleController
       $default = $param->getDefaultValue();
       $result[$name] = $default;
     }
-    return shortcode_atts($result, $atts);
+    for ($i=0;isset($atts[$i]);$i++) {
+      $atts[$atts[$i]] = true;
+      unset($atts[$i]);
+    }
+    $atts = shortcode_atts($result, $atts);
+    return $atts;
   }
 }
 
@@ -113,3 +135,4 @@ if (!isset($bgchanneltheme_enabled_modules)) {
   $bgchanneltheme_enabled_modules = [];
 }
 BGChannelModuleController::register_modules();
+BGChannelModuleController::prepareViews();

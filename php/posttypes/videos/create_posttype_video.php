@@ -20,3 +20,15 @@ function bgchanneltheme_createposttype_video() {
         ]
     ] );
 }
+
+function bgchanneltheme_get_featured_video($index) {
+  $featured_videos = json_decode(get_option('bgchanneltheme_featured_videos', '[]'));
+  if (isset($featured_videos[$index])) {
+    return $featured_videos[$index];
+  } else {
+    return null;
+  }
+}
+function bgchanneltheme_get_featured_videos() {
+  return json_decode(get_option(bgchanneltheme_featured_videos, '[]'));
+}
